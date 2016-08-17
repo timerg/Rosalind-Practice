@@ -1,0 +1,9 @@
+*.dSYM
+*.dat
+data*
+data_new
+*.stack-work
+*.yaml
+LICENSE
+*.pdf
+*.o
