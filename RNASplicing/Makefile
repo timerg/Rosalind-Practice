@@ -5,15 +5,13 @@ CFLAGS=-Wall -g
 
 
 
-all: longCSFind
+all: rnaSplice
 
-longCSFind:	sufixTree.o linked.o parseFASTA.o testFile.o
-
-parseFASTA: linked.o
+rnaSplice: linked.o parseFASTA.o
 
 clean:
-	rm -f sufixTree.o linked.o parseFASTA.o testFile.o
-	rm -r sufixTree linked parseFASTA testFile longCSFind
+	rm -f linked.o parseFASTA.o
+	rm -r linked parseFASTA
 
   # make can't see anything in the file for object.o,
   # but it does see an object.c file,

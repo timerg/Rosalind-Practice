@@ -12,7 +12,7 @@
 int runTest(FILE* file){
 
 
-    FastaList* input = parseFile(file);
+    FastaList* input = parseFile_withHead(file);
     Node* labelList = constructLabel(input);
     SNode* tree = createRoot();
     tree = constructTree(tree, input);
@@ -33,9 +33,8 @@ void test(){
 
 
     char* filename[3] = {"./data_test/data0", "./data_test/data1", "./data_test/data2"};
-    // int result[3] = {67, 65, 155};
+    int result[3] = {67, 65, 155};
     for(int i = 0; i < 3; i++){
-
 
     printf("%s\n", filename[i]);
     FILE* file;
@@ -43,7 +42,7 @@ void test(){
 
     int val = runTest(file);
 
-    // assert(val == result[i]);
+    assert(val == result[i]);
     printf("Result: %d\n", val);
     }
 }

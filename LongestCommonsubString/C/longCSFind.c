@@ -172,19 +172,20 @@ Node* constructLabel(FastaList* list){
 
 
 
+
 int main() {
     FILE* file;
     file = fopen("sampleData", "r");
     // error happens after 1267
     // Build FASTA List
-    FastaList* input = parseFile(file);
+    FastaList* input = parseFile_withHead(file);
     // print_list_number(input);
     Node* labelList = constructLabel(input);
 
     // Build an empty tree
     SNode* tree = createRoot();
 
-    // test();
+    test();
     tree = constructTree(tree, input);
     Node* output = findCommon(tree, labelList);
 
